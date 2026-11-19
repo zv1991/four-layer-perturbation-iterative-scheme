@@ -1,5 +1,7 @@
 # Perturbation algorithm and iterative realization of a four-layer semi-discrete scheme
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24368251.svg)](https://doi.org/10.5281/zenodo.24368251)
+
 Python implementation of the algorithms and of the numerical experiments of the article
 
 > D. Gulua, J. Rogava, Z. Vashakidze,
@@ -10,8 +12,10 @@ Python implementation of the algorithms and of the numerical experiments of the 
 * **Journal version** (Proceedings of I. Vekua Institute of Applied Mathematics, Vol. 76, 2026):
   <https://viam.science.tsu.ge/new/index.php?lang=eng&page=publishing&subpage=proceedings&vol=76&n=>
 * **Preprint version** (arXiv): <https://arxiv.org/abs/TBA>
+* **Archived code** (Zenodo): <https://doi.org/10.5281/zenodo.24368251>
 
-Repository: <https://github.com/zv1991/four-layer-perturbation-iterative-scheme> (MIT License, see [`LICENSE`](LICENSE)).
+Repository: <https://github.com/zv1991/four-layer-perturbation-iterative-scheme> (MIT License, see [`LICENSE`](LICENSE)),
+archived on Zenodo with the DOI [10.5281/zenodo.24368251](https://doi.org/10.5281/zenodo.24368251).
 
 The code depends only on [NumPy](https://numpy.org). It is written for a **general**
 evolutionary problem with a variable operator; the model problem of Section 7 of the
@@ -550,6 +554,28 @@ If you use this code, please cite the article:
        URL = {https://viam.science.tsu.ge/new/index.php?lang=eng&page=publishing&subpage=proceedings&vol=76&n=},
 }
 ```
+
+To refer to the code itself, please cite its archived version on Zenodo:
+
+> D. Gulua, J. Rogava, Z. Vashakidze, Python code for: Perturbation algorithm and iterative
+> realization of a four-layer semi-discrete scheme for an evolutionary problem with a variable
+> operator, Zenodo, 2026. [doi:10.5281/zenodo.24368251](https://doi.org/10.5281/zenodo.24368251)
+
+```bibtex
+@software{GuluaRogavaVashakidze2026code,
+    AUTHOR = {Gulua, David and Rogava, Jemal and Vashakidze, Zurab},
+     TITLE = {Python code for: Perturbation algorithm and iterative realization of a
+              four-layer semi-discrete scheme for an evolutionary problem with a
+              variable operator},
+ PUBLISHER = {Zenodo},
+      YEAR = {2026},
+       DOI = {10.5281/zenodo.24368251},
+       URL = {https://doi.org/10.5281/zenodo.24368251},
+}
+```
+
+GitHub also offers the citation of the article under *Cite this repository* (file
+[`CITATION.cff`](CITATION.cff)).
 
 The perturbation algorithm for the four-layer scheme with a constant operator was studied in
 
