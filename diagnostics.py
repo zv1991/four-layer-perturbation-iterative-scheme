@@ -51,17 +51,17 @@ def step_conditions(tau: float, b: float, nu: float, c0: Optional[float] = None)
         c_0 b tau <= 1/2                         Theorems 6.2, 6.3 (if c_0 is given)
     """
     q = tau * b / (1.0 + tau * nu)
-    result = {"q": q, "theorem_1": q < 1.0, "lemma_2": tau * b <= 0.5}
+    result = {"q": q, "theorem_3_1": q < 1.0, "lemma_4_2": tau * b <= 0.5}
     if c0 is not None:
-        result["theorem_3"] = c0 * b * tau <= 0.5
+        result["theorem_6_2"] = c0 * b * tau <= 0.5
     return result
 
 
 def minimal_step_numbers(t_final: float, b: float, c0: Optional[float] = None) -> Dict[str, int]:
     """Smallest n (tau = T / n) for which tau b <= 1/2 and c_0 b tau <= 1/2 hold."""
-    result = {"lemma_2": int(math.ceil(2.0 * b * t_final))}
+    result = {"lemma_4_2": int(math.ceil(2.0 * b * t_final))}
     if c0 is not None:
-        result["theorem_3"] = int(math.ceil(2.0 * c0 * b * t_final))
+        result["theorem_6_2"] = int(math.ceil(2.0 * c0 * b * t_final))
     return result
 
 
@@ -116,7 +116,7 @@ def starting_quantities(problem: EvolutionProblem, solution: PerturbationSolutio
 # ======================================================================
 #  Lemma 5.1: residual of the four-layer scheme on v
 # ======================================================================
-def residual_of_lemma_4(solution: PerturbationSolution, k: int):
+def residual_of_lemma_5_1(solution: PerturbationSolution, k: int):
     """R~_k(tau) = tau^3 (1/2 delta^2 u2_k + 1/3 delta^3 u1_k + tau/3 delta^3 u2_k), (5.2)."""
     tau = solution.tau
     return tau ** 3 * (0.5 * backward_difference(solution.u2, k, 2, tau)
@@ -132,7 +132,7 @@ def residual_identity_defect(problem: EvolutionProblem, solution: PerturbationSo
     """
     defect, size = 0.0, 0.0
     for k in range(5, solution.grid.n + 1):
-        R = residual_of_lemma_4(solution, k)
+        R = residual_of_lemma_5_1(solution, k)
         r = four_layer_residual(problem, solution.grid, solution.v, k)
         defect = max(defect, problem.norm(r - R))
         size = max(size, problem.norm(R))
@@ -156,8 +156,8 @@ def main() -> None:
           % (nu, b))
     print("  sup_k max_x |P_k(x)| ~ %.6f  (k = %d, x = %.4f)" % (c0, k0, x0))
     steps = minimal_step_numbers(t_final, b, c0)
-    print("  tau b <= 1/2      (Lemmas 4.2, 4.4, Theorem 5.2):  n >= %d" % steps["lemma_2"])
-    print("  c_0 b tau <= 1/2  (Theorems 6.2, 6.3):           n >= %d" % steps["theorem_3"])
+    print("  tau b <= 1/2      (Lemmas 4.2, 4.4, Theorem 5.2):  n >= %d" % steps["lemma_4_2"])
+    print("  c_0 b tau <= 1/2  (Theorems 6.2, 6.3):           n >= %d" % steps["theorem_6_2"])
     print()
     print("  %6s  %-34s  %-34s  %s" % ("n", "M_0, M_1, M_2 (Example 1)",
                                        "M_0, M_1, M_2 (Example 2)", "Lemma 5.1 defect / max |R~|"))

@@ -45,11 +45,13 @@ approximation w^{[0]} = u^(j)_{k-1} (Remark 3.3).  Thus, in all iterations, on
 all layers and for all three schemes, one and the same operator I + tau A is
 inverted.
 
-Error estimate (Theorem 6.3).  If the solution of (2.1) is smooth enough, the
-starting values are of accuracy O(tau^3), and the quantities M_0, M_1, M_2 of
-(5.3) are bounded uniformly with respect to tau, then ||u(t_k) - v_k|| = O(tau^3).
-The intermediate approximations u0_k and u0_k + tau u1_k are of the first and
-second order, respectively.
+Error estimate (Theorem 6.3).  If B and f are smooth enough, the solution of
+(2.1) belongs to C^4([0, T]; H), c_0 b tau <= 1/2, ||u(t_k) - v_k|| = O(tau^3)
+for k = 2, 3, 4, and the quantities M_0, M_1, M_2 of (5.3) are bounded
+uniformly with respect to tau, then ||u(t_k) - v_k|| = O(tau^3), k = 2, ..., n
+(estimate (6.8)).  The intermediate approximations u0_k and u0_k + tau u1_k
+are of the first and second order, respectively (observed in Example 1 of
+Section 7).
 """
 
 from __future__ import annotations

@@ -8,8 +8,9 @@ approximation (the three-step backward differentiation formula, BDF3),
     (11/6 u_k - 3 u_{k-1} + 3/2 u_{k-2} - 1/3 u_{k-3}) / tau + (A + B_k) u_k = f_k,
     k = 3, ..., n,                                                          (2.9)
 
-is obtained from the identity (2.7) by omitting the remainder term tau^3 R_k of
-(2.5)-(2.6).  It needs the starting values u_0, u_1, u_2.
+is obtained from the representation (2.8) of equation (2.1) (based on the
+identity (2.7)) by omitting the remainder term tau^3 R_k of (2.5)-(2.6).  It
+needs the starting values u_0, u_1, u_2.
 
 Realization (Remark 3.4).  Multiplying (2.9) by 6 tau / 11 gives an equation of
 the form (3.1) with c = 6 tau / 11,
