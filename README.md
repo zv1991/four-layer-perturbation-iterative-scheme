@@ -116,9 +116,11 @@ u_1^{(1)} = \frac{v_1 - u_1^{(0)}}{\tau}, \qquad
 u_2^{(2)} = \frac{v_2 - u_2^{(0)} - \tau u_2^{(1)}}{\tau^2}.
 ```
 
-$u_k^{(0)}$ is of the first order, $u_k^{(0)} + \tau u_k^{(1)}$ of the second order, and,
-under the assumptions of Theorem 6.3 (in particular, the quantities $M_0, M_1, M_2$ of (5.3)
-are bounded uniformly in $\tau$), $v_k$ is of the third order.
+$u_k^{(0)}$ is an approximation of the first order and $u_k^{(0)} + \tau u_k^{(1)}$ of the
+second order (as observed in Example 1 of Section 7). By Theorem 6.3 (smoothness assumptions
+and $c_0 b\tau \le 1/2$), if $\|u(t_k) - v_k\| = O(\tau^3)$ for $k = 2, 3, 4$ and the
+quantities $M_0, M_1, M_2$ of (5.3) are bounded uniformly in $\tau$, then
+$\|u(t_k) - v_k\| = O(\tau^3)$, $k = 2,\dots,n$ (estimate (6.8)): $v_k$ is of the third order.
 
 ### 2.3 Iterative realization (Section 3)
 
@@ -131,7 +133,7 @@ Each layer of each scheme requires the solution of an equation of the form (3.1)
 with $c = \tau$ for the two-layer schemes (with $F_k = u_{k-1}^{(j)} + \tau g_k^{(j)}$ and
 $g^{(j)}$ of (3.2)) and $c = \tfrac{6}{11}\tau$ for the four-layer scheme (Remark 3.4, with
 $F_k = \tfrac{1}{11}(18u_{k-1} - 9u_{k-2} + 2u_{k-3}) + cf_k$). The operator depends on $k$
-and is not self-adjoint. The term with $B_k$ is **moved to the right-hand side** and the
+and, in general, is not self-adjoint. The term with $B_k$ is **moved to the right-hand side** and the
 equation is solved by the iterations (3.4)
 
 ```math
@@ -139,7 +141,8 @@ equation is solved by the iterations (3.4)
 ```
 
 so that only the time-independent operator $I + cA$ is inverted, on all layers and in all
-iterations. With $S = (I + cA)^{-1}$ and $q = cb/(1 + c\nu)$ (3.5), **Theorem 3.1**: if
+iterations. With $S = (I + cA)^{-1}$ and $q = cb/(1 + c\nu)$ ((3.5) for $c = \tau$; for
+$c = 6\tau/11$ this is the ratio $6\tau b/(11 + 6\tau\nu)$ of Remark 3.4), **Theorem 3.1**: if
 $q < 1$ (3.7), the iterations converge and
 
 ```math
@@ -214,7 +217,8 @@ nothing about the model problem: they use only the interface `EvolutionProblem`.
   supplied, e.g. the discrete sine transform) gives $\nu = \min\lambda$ and the resolvents
   $(I + cA)^{-1} = Q\,\mathrm{diag}\bigl(1/(1 + c\lambda)\bigr)Q^T$; each resolvent matrix is
   computed **once for every value of $c$** and cached. `bound_B(T)` evaluates the spectral
-  norm of $B(t)$ at 401 equally spaced points of $[0,T]$ (as in Section 7).
+  norm of $B(t)$ at 401 equally spaced points of $[0,T]$ (this gives the value $b_h$ of
+  Section 7).
   `direct_layer_solve(c, t, F)` solves (3.1) by Gaussian elimination; it serves only as a
   reference in the experiments.
 
@@ -279,8 +283,9 @@ The same class serves the two-layer schemes ($c = \tau$) and the four-layer sche
 for problems without a known solution: the implicit Euler scheme (2.12) with the steps
 $h, h/2, h/4$ ($h = \tau/4$) on $[0, 2\tau]$, combined by Richardson extrapolation
 $(8E_{h/4} - 6E_{h/2} + E_h)/3$. (The article assumes that $v_1, v_2$ are given; this is
-one way to obtain them. In the model problem it gives the same errors as the exact
-values.)
+one way to obtain them. In both examples of Section 7 it gives practically the same errors
+as the exact values: the relative differences are below $10^{-3}$ and do not change the three
+digits shown in Tables 7.1 and 7.2.)
 
 ### `four_layer_scheme.py` — the four-layer scheme
 
@@ -343,8 +348,8 @@ discretization on $x_i = ih$, $h = 1/(N+1)$, $N = 127$: central difference quoti
 rectangle rule; $H_h = \mathbb{R}^N$ with $(v,w)_h = h\sum_i v_iw_i$. The right-hand side
 is formed on the grid, $f_h = U' + (A_h + B_h(t))U$, so that $U(t) = (u(x_i,t))_i$ is the
 exact solution of the semi-discrete problem and all errors are errors of the time
-discretization. Iterations: $\mathrm{tol} = 10^{-13}$; $b_h$ is the maximum of
-$\|B_h(t)\|_h$ at 401 equally spaced points of $[0,T]$; since $b_h < \nu_h$ (the smallest
+discretization. Iterations: $\mathrm{tol} = 10^{-13}$; $b_h = \max_t\|B_h(t)\|_h$ (in the code, the maximum
+over 401 equally spaced points of $[0,T]$); since $b_h < \nu_h$ (the smallest
 eigenvalue of $A_h$), the iterations converge for every $\tau$ (Remark 3.2).
 
 * **Example 1**: $u = t^7e^{-2t}\sin\pi x + \tfrac12 t^7e^{-t}\sin 2\pi x$.
@@ -358,7 +363,7 @@ $n = 10, 20, \dots, 1280$.
 |---|---|---|---|
 | 1. Example 1, perturbation algorithm | `convergence_example1.csv` | `n, tau, err0, ord0, err1, ord1, err2, ord2, sweeps` ($E^{(0)}, E^{(1)}, E^{(2)}$, orders, mean iterations) | Table 7.1, Figure 7.1 |
 | 2. Example 2, perturbation algorithm and scheme (2.9) | `convergence_example2.csv`, `error_history.csv` | `n, tau, err_pert, ord_pert, err_bdf, ord_bdf`; `t, err_pert, err_bdf` ($n = 160$, layers $k \ge 3$) | Table 7.2, Figure 7.2 |
-| 3. Iterations (3.4) on the layer $t_k = 1/2$ of Example 2 | `iteration_decay.csv`, `iteration_statistics.csv` | `s, err_n10, bound_n10, ...` ($\|w^{[s]}-w\|$ and $q^s\|w^{[0]}-w\|$); `n, tau, q, q_obs, sweeps` | Figure 7.3, Table 7.3 |
+| 3. Iterations (3.4) for the equation of scheme (2.12) on the layer $t_k = 1/2$ of Example 2 | `iteration_decay.csv`, `iteration_statistics.csv` | `s, err_n10, bound_n10, ...` ($\|w^{[s]}-w\|$ and $q^s\|w^{[0]}-w\|$); `n, tau, q, q_obs, sweeps` (`sweeps`: mean number of iterations per two-layer solve in experiment 1, Example 1) | Figure 7.3, Table 7.3 |
 | 4. Example 1, prescribed number $s$ of iterations | `sweeps_study.csv` | `n, tau, err_s1, ord_s1, ..., err_s4, ord_s4, err_conv, ord_conv` | Table 7.4 |
 | constants | `constants.csv` | `nu, b` | (not used by LaTeX) |
 
@@ -538,9 +543,10 @@ If you use this code, please cite the article:
               semi-discrete scheme for an evolutionary problem with a variable
               operator},
    JOURNAL = {Proc. I. Vekua Inst. Appl. Math.},
-  FJOURNAL = {Proceedings of I. Vekua Institute of Applied Mathematics},
+  FJOURNAL = {Proceedings of Ilia Vekua Institute of Applied Mathematics},
     VOLUME = {76},
       YEAR = {2026},
+      ISSN = {1512-004X},
        URL = {https://viam.science.tsu.ge/new/index.php?lang=eng&page=publishing&subpage=proceedings&vol=76&n=},
 }
 ```
