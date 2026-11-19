@@ -1,0 +1,96 @@
+# Citation metadata of this repository (Citation File Format, https://citation-file-format.github.io).
+# GitHub shows it as "Cite this repository"; Zenodo can read it when archiving a release.
+cff-version: 1.2.0
+message: >-
+  If you use this software, please cite the article given under
+  "preferred-citation" below.
+title: >-
+  Python code for: Perturbation algorithm and iterative realization of a
+  four-layer semi-discrete scheme for an evolutionary problem with a variable
+  operator
+type: software
+version: 1.0.1
+date-released: "2026-11-19"
+license: MIT
+repository-code: "https://github.com/zv1991/four-layer-perturbation-iterative-scheme"
+url: "https://github.com/zv1991/four-layer-perturbation-iterative-scheme"
+authors:
+  - family-names: Gulua
+    given-names: David
+    affiliation: Georgian Technical University
+  - family-names: Rogava
+    given-names: Jemal
+    affiliation: Ivane Javakhishvili Tbilisi State University
+    orcid: "https://orcid.org/0000-0001-9460-4283"
+  - family-names: Vashakidze
+    given-names: Zurab
+    affiliation: >-
+      The University of Georgia; Ivane Javakhishvili Tbilisi State University
+    orcid: "https://orcid.org/0000-0001-8736-6213"
+    email: z.vashakidze@ug.edu.ge
+abstract: >-
+  Python implementation of the algorithms and of the numerical experiments of
+  the article. The code solves the Cauchy problem u'(t) + (A + B(t)) u(t) =
+  f(t) in a Hilbert space, where A is self-adjoint positive definite and B(t)
+  is a bounded time-dependent operator. It contains the perturbation
+  algorithm, which reduces the purely implicit four-layer scheme (three-step
+  backward differentiation formula, BDF3) to three two-layer schemes; the
+  four-layer scheme itself; and the iterative realization in which only the
+  time-independent operator I + tau A is inverted. The script
+  run_experiments.py reproduces the data of all tables and figures of
+  Section 7 of the article. Requirements: Python >= 3.8 and NumPy >= 1.20.
+keywords:
+  - evolutionary problem
+  - variable operator
+  - four-layer semi-discrete scheme
+  - backward differentiation formula
+  - BDF3
+  - perturbation algorithm
+  - iterative method
+  - a priori estimate
+  - numerical analysis
+  - Python
+  - NumPy
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Gulua
+      given-names: David
+      affiliation: Georgian Technical University
+    - family-names: Rogava
+      given-names: Jemal
+      affiliation: Ivane Javakhishvili Tbilisi State University
+      orcid: "https://orcid.org/0000-0001-9460-4283"
+    - family-names: Vashakidze
+      given-names: Zurab
+      affiliation: >-
+        The University of Georgia; Ivane Javakhishvili Tbilisi State University
+      orcid: "https://orcid.org/0000-0001-8736-6213"
+  title: >-
+    Perturbation algorithm and iterative realization of a four-layer
+    semi-discrete scheme for an evolutionary problem with a variable operator
+  journal: Proceedings of I. Vekua Institute of Applied Mathematics
+  volume: 76
+  year: 2026
+  issn: 1512-004X
+  status: in-press
+  url: "https://viam.science.tsu.ge/new/index.php?lang=eng&page=publishing&subpage=proceedings&vol=76&n="
+references:
+  - type: article
+    authors:
+      - family-names: Rogava
+        given-names: Jemal
+      - family-names: Gulua
+        given-names: David
+    title: >-
+      The perturbation algorithm for the realization of a four-layer
+      semi-discrete solution scheme of an abstract evolutionary problem
+    journal: Georgian Mathematical Journal
+    volume: 25
+    issue: 1
+    start: 77
+    end: 92
+    year: 2018
+    issn: 1072-947X
+    doi: 10.1515/gmj-2017-0061
+    url: "https://doi.org/10.1515/gmj-2017-0061"
