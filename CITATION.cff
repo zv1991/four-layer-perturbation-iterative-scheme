@@ -14,6 +14,14 @@ date-released: "2026-11-19"
 license: MIT
 repository-code: "https://github.com/zv1991/four-layer-perturbation-iterative-scheme"
 url: "https://github.com/zv1991/four-layer-perturbation-iterative-scheme"
+doi: 10.5281/zenodo.24368251
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.24368251
+    description: Archived version of the code on Zenodo
+  - type: url
+    value: "https://github.com/zv1991/four-layer-perturbation-iterative-scheme"
+    description: GitHub repository
 authors:
   - family-names: Gulua
     given-names: David
