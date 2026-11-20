@@ -22,6 +22,9 @@ identifiers:
   - type: url
     value: "https://github.com/zv1991/four-layer-perturbation-iterative-scheme"
     description: GitHub repository
+  - type: url
+    value: "https://arxiv.org/abs/2611.26136"
+    description: "arXiv preprint of the article (arXiv:2611.26136)"
 authors:
   - family-names: Gulua
     given-names: David
@@ -83,6 +86,13 @@ preferred-citation:
   issn: 1512-004X
   status: in-press
   url: "https://viam.science.tsu.ge/new/index.php?lang=eng&page=publishing&subpage=proceedings&vol=76&n="
+  identifiers:
+    - type: url
+      value: "https://arxiv.org/abs/2611.26136"
+      description: "arXiv preprint (arXiv:2611.26136)"
+    - type: doi
+      value: 10.48550/arXiv.2611.26136
+      description: DOI of the arXiv preprint
 references:
   - type: article
     authors:
