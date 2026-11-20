@@ -4,7 +4,8 @@ run_experiments.py -- numerical experiments of Section 7 of the article
 
     D. Gulua, J. Rogava, Z. Vashakidze,
     "Perturbation algorithm and iterative realization of a four-layer
-     semi-discrete scheme for an evolutionary problem with a variable operator".
+     semi-discrete scheme for an evolutionary problem with a variable operator",
+    Proc. I. Vekua Inst. Appl. Math. 76 (2026); preprint arXiv:2611.26136.
 
 The script runs four experiments for the model problem (7.1)
 (model_problem.py) and exports the data of all tables and figures of the

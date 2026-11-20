@@ -8,7 +8,7 @@ rem    D. Gulua, J. Rogava, Z. Vashakidze,
 rem    "Perturbation algorithm and iterative realization of a four-layer
 rem     semi-discrete scheme for an evolutionary problem with a variable
 rem     operator", Proceedings of I. Vekua Institute of Applied Mathematics,
-rem     Vol. 76, 2026 (preprint: https://arxiv.org/abs/TBA).
+rem     Vol. 76, 2026 (preprint: arXiv:2611.26136, https://arxiv.org/abs/2611.26136).
 rem
 rem  Repository: https://github.com/zv1991/four-layer-perturbation-iterative-scheme
 rem  The script must stay in the same folder as the Python files.
