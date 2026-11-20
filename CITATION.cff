@@ -9,16 +9,16 @@ title: >-
   four-layer semi-discrete scheme for an evolutionary problem with a variable
   operator
 type: software
-version: 1.0.1
-date-released: "2026-11-19"
+version: 1.0.2
+date-released: "2026-11-20"
 license: MIT
 repository-code: "https://github.com/zv1991/four-layer-perturbation-iterative-scheme"
 url: "https://github.com/zv1991/four-layer-perturbation-iterative-scheme"
-doi: 10.5281/zenodo.24368251
+doi: 10.5281/zenodo.24368250
 identifiers:
   - type: doi
-    value: 10.5281/zenodo.24368251
-    description: Archived version of the code on Zenodo
+    value: 10.5281/zenodo.24368250
+    description: Archived code on Zenodo (all versions; resolves to the latest version)
   - type: url
     value: "https://github.com/zv1991/four-layer-perturbation-iterative-scheme"
     description: GitHub repository
