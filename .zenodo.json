@@ -42,10 +42,10 @@
       "resource_type": "publication-article"
     },
     {
-      "identifier": "arXiv:2611.26136",
+      "identifier": "https://arxiv.org/abs/2611.26136",
       "relation": "isSupplementTo",
       "resource_type": "publication-preprint",
-      "scheme": "arxiv"
+      "scheme": "url"
     },
     {
       "identifier": "10.1515/gmj-2017-0061",
