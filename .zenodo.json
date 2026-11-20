@@ -21,7 +21,7 @@
       "orcid": "0000-0001-8736-6213"
     }
   ],
-  "description": "<p>Python implementation of the algorithms and of the numerical experiments of the article D. Gulua, J. Rogava, Z. Vashakidze, <em>Perturbation algorithm and iterative realization of a four-layer semi-discrete scheme for an evolutionary problem with a variable operator</em>, Proceedings of I. Vekua Institute of Applied Mathematics, Vol. 76, 2026.</p><p>The code solves the Cauchy problem u'(t) + (A + B(t)) u(t) = f(t) in a Hilbert space, where A is self-adjoint positive definite and B(t) is a bounded time-dependent operator. It contains the perturbation algorithm, which reduces the purely implicit four-layer scheme (three-step backward differentiation formula, BDF3) to three two-layer schemes; the four-layer scheme itself; and the iterative realization in which only the time-independent operator I + &tau;A is inverted. The script run_experiments.py reproduces the data of all tables and figures of Section 7 of the article (Tables 7.1&ndash;7.4, Figures 7.1&ndash;7.3); self_test.py and diagnostics.py check the implementation and the hypotheses of the theorems. On Windows, run_Python.bat runs everything in one step.</p><p>Requirements: Python &ge; 3.8 and NumPy &ge; 1.20. Equation and theorem numbers in the code follow the arXiv version of the article; the README gives the correspondence with the journal version.</p>",
+  "description": "<p>Python implementation of the algorithms and of the numerical experiments of the article D. Gulua, J. Rogava, Z. Vashakidze, <em>Perturbation algorithm and iterative realization of a four-layer semi-discrete scheme for an evolutionary problem with a variable operator</em>, Proceedings of I. Vekua Institute of Applied Mathematics, Vol. 76, 2026 (preprint: <a href=\"https://arxiv.org/abs/2611.26136\">arXiv:2611.26136</a>).</p><p>The code solves the Cauchy problem u'(t) + (A + B(t)) u(t) = f(t) in a Hilbert space, where A is self-adjoint positive definite and B(t) is a bounded time-dependent operator. It contains the perturbation algorithm, which reduces the purely implicit four-layer scheme (three-step backward differentiation formula, BDF3) to three two-layer schemes; the four-layer scheme itself; and the iterative realization in which only the time-independent operator I + &tau;A is inverted. The script run_experiments.py reproduces the data of all tables and figures of Section 7 of the article (Tables 7.1&ndash;7.4, Figures 7.1&ndash;7.3); self_test.py and diagnostics.py check the implementation and the hypotheses of the theorems. On Windows, run_Python.bat runs everything in one step.</p><p>Requirements: Python &ge; 3.8 and NumPy &ge; 1.20. Equation and theorem numbers in the code follow the arXiv version of the article; the README gives the correspondence with the journal version.</p>",
   "keywords": [
     "evolutionary problem",
     "variable operator",
@@ -40,6 +40,12 @@
       "identifier": "https://viam.science.tsu.ge/new/index.php?lang=eng&page=publishing&subpage=proceedings&vol=76&n=",
       "relation": "isSupplementTo",
       "resource_type": "publication-article"
+    },
+    {
+      "identifier": "arXiv:2611.26136",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-preprint",
+      "scheme": "arxiv"
     },
     {
       "identifier": "10.1515/gmj-2017-0061",
