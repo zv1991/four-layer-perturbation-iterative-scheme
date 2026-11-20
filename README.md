@@ -1,6 +1,6 @@
 # Perturbation algorithm and iterative realization of a four-layer semi-discrete scheme
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24368251.svg)](https://doi.org/10.5281/zenodo.24368251)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24368250.svg)](https://doi.org/10.5281/zenodo.24368250)
 [![arXiv](https://img.shields.io/badge/arXiv-2611.26136-b31b1b.svg)](https://arxiv.org/abs/2611.26136)
 
 Python implementation of the algorithms and of the numerical experiments of the article
@@ -13,10 +13,11 @@ Python implementation of the algorithms and of the numerical experiments of the 
 * **Journal version** (Proceedings of I. Vekua Institute of Applied Mathematics, Vol. 76, 2026):
   <https://viam.science.tsu.ge/new/index.php?lang=eng&page=publishing&subpage=proceedings&vol=76&n=>
 * **Preprint version** (arXiv:2611.26136): <https://arxiv.org/abs/2611.26136>
-* **Archived code** (Zenodo): <https://doi.org/10.5281/zenodo.24368251>
+* **Archived code** (Zenodo, all versions): <https://doi.org/10.5281/zenodo.24368250>
 
 Repository: <https://github.com/zv1991/four-layer-perturbation-iterative-scheme> (MIT License, see [`LICENSE`](LICENSE)),
-archived on Zenodo with the DOI [10.5281/zenodo.24368251](https://doi.org/10.5281/zenodo.24368251).
+archived on Zenodo with the DOI [10.5281/zenodo.24368250](https://doi.org/10.5281/zenodo.24368250) (all versions; it always
+resolves to the latest release, and every release also has a DOI of its own).
 
 The code depends only on [NumPy](https://numpy.org). It is written for a **general**
 evolutionary problem with a variable operator; the model problem of Section 7 of the
@@ -562,7 +563,7 @@ To refer to the code itself, please cite its archived version on Zenodo:
 
 > D. Gulua, J. Rogava, Z. Vashakidze, Python code for: Perturbation algorithm and iterative
 > realization of a four-layer semi-discrete scheme for an evolutionary problem with a variable
-> operator, Zenodo, 2026. [doi:10.5281/zenodo.24368251](https://doi.org/10.5281/zenodo.24368251)
+> operator, Zenodo, 2026. [doi:10.5281/zenodo.24368250](https://doi.org/10.5281/zenodo.24368250)
 
 ```bibtex
 @software{GuluaRogavaVashakidze2026code,
@@ -572,10 +573,14 @@ To refer to the code itself, please cite its archived version on Zenodo:
               variable operator},
  PUBLISHER = {Zenodo},
       YEAR = {2026},
-       DOI = {10.5281/zenodo.24368251},
-       URL = {https://doi.org/10.5281/zenodo.24368251},
+       DOI = {10.5281/zenodo.24368250},
+       URL = {https://doi.org/10.5281/zenodo.24368250},
 }
 ```
+
+This DOI refers to all versions of the code and always resolves to the latest one. To cite
+the exact version you used, take the DOI shown on the Zenodo page of that version (for
+example, version 1.0.1 has the DOI [10.5281/zenodo.24368251](https://doi.org/10.5281/zenodo.24368251)).
 
 GitHub also offers the citation of the article under *Cite this repository* (file
 [`CITATION.cff`](CITATION.cff)).
