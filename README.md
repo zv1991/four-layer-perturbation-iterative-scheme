@@ -1,6 +1,7 @@
 # Perturbation algorithm and iterative realization of a four-layer semi-discrete scheme
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24368251.svg)](https://doi.org/10.5281/zenodo.24368251)
+[![arXiv](https://img.shields.io/badge/arXiv-2611.26136-b31b1b.svg)](https://arxiv.org/abs/2611.26136)
 
 Python implementation of the algorithms and of the numerical experiments of the article
 
@@ -11,7 +12,7 @@ Python implementation of the algorithms and of the numerical experiments of the 
 
 * **Journal version** (Proceedings of I. Vekua Institute of Applied Mathematics, Vol. 76, 2026):
   <https://viam.science.tsu.ge/new/index.php?lang=eng&page=publishing&subpage=proceedings&vol=76&n=>
-* **Preprint version** (arXiv): <https://arxiv.org/abs/TBA>
+* **Preprint version** (arXiv:2611.26136): <https://arxiv.org/abs/2611.26136>
 * **Archived code** (Zenodo): <https://doi.org/10.5281/zenodo.24368251>
 
 Repository: <https://github.com/zv1991/four-layer-perturbation-iterative-scheme> (MIT License, see [`LICENSE`](LICENSE)),
@@ -24,7 +25,7 @@ checks the requirements, tests the implementation and reproduces all numerical r
 the article in one step (see [Section 6](#6-installation-and-usage)).
 
 **Numbering.** All equation, theorem, lemma, remark, table and figure numbers below (and in
-the comments of the Python files) refer to the **arXiv preprint version**, in which they are
+the comments of the Python files) refer to the **arXiv preprint version** ([arXiv:2611.26136](https://arxiv.org/abs/2611.26136)), in which they are
 numbered within sections: equation (2.9) is the ninth equation of Section 2, Theorem 3.1 is
 the first numbered statement of Section 3 (theorems, lemmas and remarks share one counter),
 Table 7.1 is the first table of Section 7, etc. In the **journal version** they are numbered
@@ -538,7 +539,7 @@ If you use this code, please cite the article:
 > four-layer semi-discrete scheme for an evolutionary problem with a variable operator,
 > *Proc. I. Vekua Inst. Appl. Math.* **76** (2026).
 > Journal version: <https://viam.science.tsu.ge/new/index.php?lang=eng&page=publishing&subpage=proceedings&vol=76&n=>;
-> preprint: <https://arxiv.org/abs/TBA>.
+> preprint: [arXiv:2611.26136](https://arxiv.org/abs/2611.26136).
 
 ```bibtex
 @article{GuluaRogavaVashakidze2026,
@@ -552,6 +553,8 @@ If you use this code, please cite the article:
       YEAR = {2026},
       ISSN = {1512-004X},
        URL = {https://viam.science.tsu.ge/new/index.php?lang=eng&page=publishing&subpage=proceedings&vol=76&n=},
+    EPRINT = {2611.26136},
+ARCHIVEPREFIX = {arXiv},
 }
 ```
 
